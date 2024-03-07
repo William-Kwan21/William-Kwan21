@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Wetro Swim Shop</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                font-family: 'Baloo 2', cursive; /* Apply the font globally */
+                text-align: center;
+            }
+
+            .jumbotron {
+                background-size: 100%;
+                background-position: 50% 24%;
+                color: rgb(41, 198, 226);
+                text-align: center;
+                width: 100%;
+                height: 375px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Baloo 2', cursive;
+            }
+
+            .jumbotron h1 {
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 20px;
+                border-radius: 20px; /* Gives a rounded, bubble-like appearance */
+                font-size: 2.5rem; /* Adjust based on your preference */
+            }
+
+            /* Style your buttons and labels */
+            button, .label {
+                background-color: #4CAF50; /* Green background */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 25px; /* Rounded corners for the bubbly look */
+                font-family: 'Baloo 2', cursive;
+            }
+
+
+            .jumbotron h1 {
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+            }
+            .form-group label,
+            .form-group input,
+            .form-group button {
+                display: block; /* This will make them stack vertically */
+                margin: 10px auto; /* Adds some space around each and centers them */
+                width: fit-content; /* This will ensure the input and button are not full width */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="jumbotron" style="background-image: url(Wetro\ Swim\ shop\ banner.jpg);"></div>
+        <div class="form-group">
+            <label for="item">Item:</label>
+            <input list="itemList" id="item" required style="width: 300px;">
+            <datalist id="itemList">
+                <option value="Goggles">
+                <option value="Men's Swimsuit">
+                <option value="Women's Swimsuit">
+                <option value="Cap">
+                <option value="Fins">
+                <option value="Paddles">
+                <option value="Snorkel">
+            </datalist>
+            <label for="itemQuantity">How many swim items would you like to order? (1-99)</label>
+            <input type="number" id="itemQuantity" name="itemQuantity" min="1" max="99">
+            <button onclick="placeOrder()">Place Order</button>
+        </div>
+        
+        <div id="orderSummary"></div>
+    <div id="customerGreeting"></div>
+    <div id="orderDetails"></div>
+    <script>
+        alert("Welcome to our online store!");
+        // Formats the date in the desired format (e.g., "March 12, 2024")
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const deliveryDate = new Date();
+        deliveryDate.setDate(deliveryDate.getDate() + 7); // Assuming delivery is 7 days from now
+        const formattedDate = deliveryDate.toLocaleDateString('en-US', options);
+
+        let greetingTime;
+        const hours = now.getHours();
+        if (hours < 12) greetingTime = "Good Morning";
+        else if (hours < 18) greetingTime = "Good Afternoon";
+        else greetingTime = "Good Evening";
+
+s
+        function placeOrder() {
+            let customerName = prompt("Please enter your name:");
+            updateGreeting();
+            const itemName = document.getElementById('item').value;
+            const itemQuantity = document.getElementById('itemQuantity').value;
+            if(itemQuantity < 1 || itemQuantity > 99) {
+                alert("Please enter a quantity between 1 and 99.");
+                return;
+            }
+            document.getElementById("customerGreeting").innerHTML = `<p>${greetingTime} ${customerName}, thank you for your order!</p>`;
+        document.getElementById("orderDetails").innerHTML = `<p>You ordered ${itemQuantity} ${itemName}(s). Your order will arrive by ${formattedDate}.</p>`;
+        }
+        function updateGreeting() {
+            let now = new Date(); // Add this line
+            let hours = new Date().getHours();
+            if (hours < 12) greetingTime = "Good Morning";
+            else if (hours < 18) greetingTime = "Good Afternoon";
+            else greetingTime = "Good Evening";
+        }
+    </script>
+    </body>
+</html> 
