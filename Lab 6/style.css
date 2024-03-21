@@ -2,11 +2,21 @@ body {
     font-family: "Baloo 2";
     margin: 20px;
     background-color: #8c8d94;
+    text-align: center;
+   
+
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+    
+    width: 75%;
+    border-collapse: separate;
+    border: 1px solid rgb(12, 12, 12);
+    border-spacing: 0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table, th, td {
@@ -15,10 +25,12 @@ table, th, td {
     text-align: left;
     background-color: rgb(135, 152, 170);
     border-radius: 5px;
+   
 }
 
 th {
-    background-color: slategray
+    background-color: slategray;
+    
 }
 
 img {
@@ -32,8 +44,8 @@ img {
 }
 button {
     background-color: #698d9b; /* Green background */
-    border: none;
     color: white;
+    border: none;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -43,10 +55,12 @@ button {
     cursor: pointer;
     border-radius: 5px; /* Rounded corners for the bubbly look */
     font-family: 'Baloo 2', cursive;
+    margin-bottom: 20px;
 }
 img {
     border: 4px solid slategray;
-    max-width: 1000%;
+    max-width: 100%;
     height: auto;
     margin-top: 20px;
+    border-radius: 15px;
 }
