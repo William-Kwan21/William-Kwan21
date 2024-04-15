@@ -13,7 +13,7 @@
             height: 100%;
             font-family: 'Baloo 2', cursive;
             text-align: center;
-            background-color: rgba(25, 7, 46, 0.5);
+            background-color: rgba(69, 92, 228, 0.5);
         }
 
         .jumbotron {
@@ -46,7 +46,17 @@
         #registrationForm .form-control, #registrationForm button {
             margin-top: 10px;
             margin-bottom: 10px; /* Add some space between form fields and the button */
+           
         }
+
+        .highlight {
+        border: 2px solid red;
+    }
+        #registrationForm button {
+            background-color: rgb(27, 46, 104);
+        }
+      
+
     </style>
 </head>
 <body>
@@ -68,31 +78,71 @@
     </div>
 
     <script>
-        function registerUser() {
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const dob = document.getElementById('dob').value;
+       function registerUser() {
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const dob = document.getElementById('dob');
+           
+            // Remove existing highlights
+            [firstName, lastName, email, password, dob].forEach(field => {
+                field.classList.remove('highlight');
+            });
 
-            if (!firstName || !lastName || !email || !password || !dob) {
-                alert('All fields are required.');
-                return;
+            let isFormValid = true;
+
+            if (!firstName.value) {
+                firstName.classList.add('highlight');
+                isFormValid = false;
+            }
+            if (!lastName.value) {
+                lastName.classList.add('highlight');
+                isFormValid = false;
+            }
+            if (!email.value) {
+                email.classList.add('highlight');
+                isFormValid = false;
+            }
+            if (!password.value) {
+                password.classList.add('highlight');
+                isFormValid = false;
+            }
+            if (!dob.value) {
+                dob.classList.add('highlight');
+                isFormValid = false;
             }
 
-            if (!password.includes('!') && !password.includes('?')) {
-                alert('Password must contain a special character: ! or ?');
-                return;
+            if (!isFormValid) {
+                alert("Please fill out the missing field!");
+                return false;
             }
-
-            document.getElementById('registrationStatus').innerHTML = `
-                <div class="alert alert-success" role="alert">
-                    Registration Successful!<br>
-                    Name: ${firstName} ${lastName}<br>
-                    Email: ${email}<br>
-                    Date of Birth: ${dob}
-                </div>`;
+            
+            if(!password.value.includes('!'||'?')) {
+                password.classList.add('highlight')
+                isFormValid = false;
+            }
+            
+            if (!isFormValid) {
+                alert("Password must include ! or ?");
+                return false;
+            }
+            console.log('firstName')
+            console.log('lastName')
+            console.log('email')
+            console.log('dob')
+            if (isFormValid) {
+                document.getElementById('registrationStatus').innerHTML= `
+                    <div class="alert alert-success" role="alert">
+                        Registration Successful!<br>
+                        Name: ${firstName.value} ${lastName.value}<br>
+                        Email: ${email.value}<br>
+                        Date of Birth: ${dob.value}<br>
+                    </div>`
+                }
         }
+
+        
     </script>
 </body>
 </html>
