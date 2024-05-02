@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Baseball Data API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4"><b>Baseball Data</b></h1>
+      <h2><b>Homepage</b></h2>
+    </div>
+    <nav class="navbar navbar-expand-lg" style="background-color: #3e87e6">
+      <div class="container-fluid">
+        <ul class="navbar-nav d-flex" style="flex-wrap: nowrap">
+          <li class="nav-item">
+            <b> <a class="nav-link active" href="index.html">Homepage</a></b>
+          </li>
+          <li class="nav-item">
+            <b>
+              <a class="nav-link" href="pages/tournamentTeams.html">Teams</a></b
+            >
+          </li>
+          <li class="nav-item">
+            <b>
+              <a class="nav-link" href="pages/tournamentFixtures.html"
+                >Fixtures</a
+              ></b
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p>
+      These are the following baseball Leagues that are in the api. If you would
+      like to see the teams in the league please refer to the navigation bar and
+      click Teams.
+    </p>
+    <p>
+      If you would like to see the games that are held this season refer to the
+      navigation bar and select Fixtures.
+    </p>
+
+    <h1>Baseball Tournaments</h1>
+    <div class="container">
+      <table id="tournamentTable">
+        <thead>
+          <tr>
+            <th style="width: 500px">Logo</th>
+            <th>League</th>
+            <th style="width: 300px">Abbreviated League Name</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be populated here -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script>
+    const fetchData = async () => {
+      const url = "https://baseball-data.p.rapidapi.com/tournament/list";
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "e894a4cc21msh51d72d87c089e4fp13af33jsn61963d84de96",
+          "X-RapidAPI-Host": "baseball-data.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json(); // Ensure proper parsing
+
+        if (response.ok) {
+          const tournaments = result; // Use correct data structure
+
+          const tableBody = document.querySelector("#tournamentTable tbody");
+
+          tableBody.innerHTML = ""; // Clear any existing rows
+          const imageCell = document.createElement("td");
+
+          const row = document.createElement("tr");
+
+          const img = document.createElement("img");
+          img.src = "KBO.png"; // Example image URL
+          img.alt = "Tournament image"; // Alt text
+          img.width = 200; // Set image size
+          img.height = 100;
+          imageCell.appendChild(img); // Add image to cell
+          row.appendChild(imageCell);
+          // Create and insert rows into the table
+          tournaments.forEach((tournament) => {
+            const emptyCell = document.createElement("td");
+
+            const participantTypeNameCell = document.createElement("td");
+            participantTypeNameCell.textContent = tournament.name; // Fetch from JSON
+            row.appendChild(participantTypeNameCell);
+
+            const participantTypeShortNameCell = document.createElement("td");
+            participantTypeShortNameCell.textContent = tournament.shortName; // Fetch from JSON
+            row.appendChild(participantTypeShortNameCell);
+
+            const countryNameCell = document.createElement("td");
+            countryNameCell.textContent = tournament.country.name; // Correct field name
+            row.appendChild(countryNameCell);
+
+            tableBody.appendChild(row);
+          });
+        } else {
+          console.error("Failed to fetch data:", response.statusText); // Clear error messages
+        }
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    };
+
+    // Fetch and display the data on page load
+    window.addEventListener("DOMContentLoaded", fetchData);
+  </script>
+</html>

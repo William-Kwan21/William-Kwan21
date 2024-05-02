@@ -1,174 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>William Kwan's Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
-   
-   <style>
-        body{
-            background-color: rgb(183, 219, 241);
-            color:rgb(25, 25, 26);
-            font-family:'Times New Roman', Times, serif
-        }
-        .jumbotron {
-            background-image: url(IMG_3314.JPG);
-            height: 300px;
-            background-size: cover;
-            background-position: 50% 59%;
-            background-repeat: no-repeat;
-            text-align: center;
-            color: rgb(116, 173, 248);
-            border-radius: 10px;
-            padding: 100px;
-            margin-top: 0;
-            font-size: 4em;
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-        }
-        .jumbotron h1{
-            text-shadow: 2px 2px 0 #1c194e, 3px 3px 0 #000, 4px 4px 0 #000; 
-        }
-        .jumbotron h2{
-            text-shadow: 2px 2px 0 #1c194e, 3px 3px 0 #000, 4px 4px 0 #000; 
-        }
-        .navbar {
-            background-color: #3e87e6 !important;
-            margin-bottom: 20px;
-            
-        }
+    <style>
+      body {
+        background-color: rgb(183, 219, 241);
+        color: rgb(25, 25, 26);
+        font-family: "Times New Roman", Times, serif;
+      }
+      .jumbotron {
+        background-image: url(IMG_3314.JPG);
+        height: 300px;
+        background-size: cover;
+        background-position: 50% 59%;
+        background-repeat: no-repeat;
+        text-align: center;
+        color: rgb(116, 173, 248);
+        border-radius: 10px;
+        padding: 100px;
+        margin-top: 0;
+        font-size: 4em;
+      }
+      .jumbotron h1 {
+        text-shadow: 2px 2px 0 #1c194e, 3px 3px 0 #000, 4px 4px 0 #000;
+      }
+      .jumbotron h2 {
+        text-shadow: 2px 2px 0 #1c194e, 3px 3px 0 #000, 4px 4px 0 #000;
+      }
+      .navbar {
+        background-color: #3e87e6 !important;
+        margin-bottom: 20px;
+      }
 
-        .navbar .nav-item .nav-link.active {
-                background-color :#9dbde7;
-            }
+      .navbar .nav-item .nav-link.active {
+        background-color: #9dbde7;
+      }
 
-        .navbar a:link,
-            .navbar a:visited{
-                color:rgb(0, 0, 0);/* Unvisited link color */
-                padding: 10px 20px;
-                text-decoration: none;
-                display: inline-block;
-            } 
-        
-        .navbar a:hover{
-            color: grey;/* Hovered link color */
-        }
-        
-        img {
-            border: 4px solid #3e4244;
-            max-width: 1000%;
-            height: auto;
-            margin-top: 20px;
-        }
+      .navbar a:link,
+      .navbar a:visited {
+        color: rgb(0, 0, 0); /* Unvisited link color */
+        padding: 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+      }
 
-        p {
-            margin-bottom: 20px;
-            text-align: center;
+      .navbar a:hover {
+        color: grey; /* Hovered link color */
+      }
 
-        }
-        a:link {
-            color: rgb(28, 48, 224); /* Unvisited link color */
-            padding: 1px 1px;
-            text-decoration: none;
-            display: inline-block;
-        } 
+      img {
+        border: 4px solid #3e4244;
+        max-width: 1000%;
+        height: auto;
+        margin-top: 20px;
+      }
 
-        a:visited {
-            color: rgb(141, 141, 141); /* Visited link color */
-            padding: 1px 1px;
-            text-decoration: none;
-            display: inline-block;
-        }
+      p {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      a:link {
+        color: rgb(28, 48, 224); /* Unvisited link color */
+        padding: 1px 1px;
+        text-decoration: none;
+        display: inline-block;
+      }
 
-        ol {
-            text-align: center; /* Center justify the list */
-            list-style-position: inside; /* Position the bullets inside the list */
-        }
-        ul {
-            text-align: center; /* Center justify the list */
-            list-style-position: inside; /* Position the bullets inside the list */
-        }
+      a:visited {
+        color: rgb(141, 141, 141); /* Visited link color */
+        padding: 1px 1px;
+        text-decoration: none;
+        display: inline-block;
+      }
 
+      ol {
+        text-align: center; /* Center justify the list */
+        list-style-position: inside; /* Position the bullets inside the list */
+      }
+      ul {
+        text-align: center; /* Center justify the list */
+        list-style-position: inside; /* Position the bullets inside the list */
+      }
     </style>
-
-
-</head>
-<body>
-    <div class ="jumbotron">
-        <h1 class = "display-4"><b>William Kwan</b></h1>
-        <h2><b>Homepage</b></h2>
-       
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4"><b>William Kwan</b></h1>
+      <h2><b>Homepage</b></h2>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-        <div class="container-fluid">
-            <ul class = "navbar-nav">
-                <li class="nav-item">
-                    <a class = "nav-link active btn btn-light me-2" href = "https://William-Kwan21.github.io" ><b>Home</b></a>
-                </li>
-                <li class = "nav-item">
-                    <a class = "nav-link btn btn-light me-2" href ="https://William-Kwan21.github.io/Lab%203/Lab3.html"><b>Lab 3</b></a>
-                </li>  
-                <li class = "nav-item">
-                    <a class = "nav-link btn btn-light me-2" href ="https://William-Kwan21.github.io/Lab%204/Lab4.html"><b>Lab 4</b></a>
-                </li>
-                <li class = "nav-item">
-                    <a class = "nav-link btn btn-light me-2" href ="https://William-Kwan21.github.io/Lab%205/Lab5.html"><b>Lab 5</b></a>
-                </li>
-                <li class = "nav-item">
-                    <a class = "nav-link btn btn-light me-2" href ="https://William-Kwan21.github.io/Lab%206/Lab6.html"><b>Lab 6</b></a>
-                </li>
-                <li class ="nav-item">
-                    <a class = "nav-link btn btn-light me-2" href = "https://github.com/William-Kwan21/William-Kwan21.github.io"><b>My Github Repository</b></a> 
-                </li>
-                <li class ="nav-item">
-                    <a class = "nav-link btn btn-light" href = "https://www.swimcloud.com/swimmer/1362997/"> <b>My Swimming Statistics</b></a>
-                </li>
-            </ul>
-        </div>
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a
+              class="nav-link active btn btn-light me-2"
+              href="https://William-Kwan21.github.io"
+              ><b>Home</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light me-2"
+              href="https://William-Kwan21.github.io/Lab%203/Lab3.html"
+              ><b>Lab 3</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light me-2"
+              href="https://William-Kwan21.github.io/Lab%204/Lab4.html"
+              ><b>Lab 4</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light me-2"
+              href="https://William-Kwan21.github.io/Lab%205/Lab5.html"
+              ><b>Lab 5</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light me-2"
+              href="https://William-Kwan21.github.io/Lab%206/Lab6.html"
+              ><b>Lab 6</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://William-Kwan21.github.io/Final%20Project/index.html"
+              ><b>Final Project</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light me-2"
+              href="https://github.com/William-Kwan21/William-Kwan21.github.io"
+              ><b>My Github Repository</b></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-light"
+              href="https://www.swimcloud.com/swimmer/1362997/"
+            >
+              <b>My Swimming Statistics</b></a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
 
-
     <div class="row">
-        <div class="col-md-6">
-            <img src="DVZB4269.JPG" alt="First Image" class="mx-auto d-block" style="max-width: 100%; height: auto; margin-top: 15px; margin-bottom: 15px; max-height: 550px;">
-        </div>
-        <div class="col-md-6">
-            <img src="IMG_4895.jpeg" alt="Second Image" class="mx-auto d-block" style="max-width: 100%; height: auto; margin-top: 15px; margin-bottom: 15px; max-height: 550px;">
-        </div>
+      <div class="col-md-6">
+        <img
+          src="DVZB4269.JPG"
+          alt="First Image"
+          class="mx-auto d-block"
+          style="
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            max-height: 550px;
+          "
+        />
+      </div>
+      <div class="col-md-6">
+        <img
+          src="IMG_4895.jpeg"
+          alt="Second Image"
+          class="mx-auto d-block"
+          style="
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            max-height: 550px;
+          "
+        />
+      </div>
     </div>
-    
-    <h2 style= "text-align: center;" >About Me</h2>
+
+    <h2 style="text-align: center">About Me</h2>
     <p>
-        My name is William Kwan, and I am currently enrolled as a Sophomore in the Verazanno Honors Program at the College of Staten Island, where I am pursuing a major in Information Systems with a specialized focus on Cybersecurity. This academic pathway allows me to delve deeply into the intricate world of information technology, equipping me with the critical skills necessary to navigate and secure the digital landscape.
+      My name is William Kwan, and I am currently enrolled as a Sophomore in the
+      Verrazano Honors Program at the College of Staten Island, where I am
+      pursuing a major in Information Systems with a specialized focus on
+      Cybersecurity. This academic pathway allows me to delve deeply into the
+      intricate world of information technology, equipping me with the critical
+      skills necessary to navigate and secure the digital landscape.
     </p>
     <p>
-        Beyond my academic endeavors, I am passionately engaged in swimming, a discipline I have committed to since the tender age of six. As an integral member of the CSI swim team, I specialize in the 400 Individual Medley, 200 Individual Medley, and the 200 Breaststroke. This involvement not only showcases my dedication to excellence in physical pursuits but also contributes to my ability to work within and contribute to a team dynamically.
-    </p>
-    <p> 
-        In addition to my athletic commitments, I have a keen interest in digital entertainment, particularly in playing video games and watching anime. These activities provide a valuable outlet for relaxation and creativity, further enriching my personal and academic life by enhancing my analytical and strategic thinking skills.
+      Beyond my academic endeavors, I am passionately engaged in swimming, a
+      discipline I have committed to since the tender age of six. As an integral
+      member of the CSI swim team, I specialize in the 400 Individual Medley,
+      200 Individual Medley, and the 200 Breaststroke. This involvement not only
+      showcases my dedication to excellence in physical pursuits but also
+      contributes to my ability to work within and contribute to a team
+      dynamically.
     </p>
     <p>
-        Overall, my academic pursuits, coupled with my athletic and recreational activities, form a well-rounded profile, reflecting my dedication to both intellectual growth and personal development.
+      In addition to my athletic commitments, I have a keen interest in digital
+      entertainment, particularly in playing video games and watching anime.
+      These activities provide a valuable outlet for relaxation and creativity,
+      further enriching my personal and academic life by enhancing my analytical
+      and strategic thinking skills.
     </p>
-    <H4 style = "text-align: center;">Coding languages I know</H4>
-    <ul style = "list-style-position: inside;padding-left: 0;">
-        <li style="margin-bottom: 1em;">C++</li>
-        <li style="margin-bottom: 1em;">Python</li>
-        <li style="margin-bottom: 1em;">C</li>
-        <li style="margin-bottom: 1em;">HTML</li>
+    <p>
+      Overall, my academic pursuits, coupled with my athletic and recreational
+      activities, form a well-rounded profile, reflecting my dedication to both
+      intellectual growth and personal development.
+    </p>
+    <h4 style="text-align: center">Coding languages I know</h4>
+    <ul style="list-style-position: inside; padding-left: 0">
+      <li style="margin-bottom: 1em">C++</li>
+      <li style="margin-bottom: 1em">Python</li>
+      <li style="margin-bottom: 1em">C</li>
+      <li style="margin-bottom: 1em">HTML</li>
     </ul>
-    <h4 style = "text-align: center" >My top 5 Anime Series</h4>
-    <ol style = "list-style-position: inside;padding-left: 0;" >
-        <li style="margin-bottom: 1em;">Demon Slayer</li>
-        <li style="margin-bottom: 1em;">Jujutsu Kaisen</li>
-        <li style="margin-bottom: 1em;">Fate Series</li>
-        <li style="margin-bottom: 1em;">Vinland Saga</li>
-        <li style="margin-bottom: 1em;">Haikyu!!</li>
+    <h4 style="text-align: center">My top 5 Anime Series</h4>
+    <ol style="list-style-position: inside; padding-left: 0">
+      <li style="margin-bottom: 1em">Demon Slayer</li>
+      <li style="margin-bottom: 1em">Jujutsu Kaisen</li>
+      <li style="margin-bottom: 1em">Fate Series</li>
+      <li style="margin-bottom: 1em">Vinland Saga</li>
+      <li style="margin-bottom: 1em">Haikyu!!</li>
     </ol>
-    
-    <hr style = "clear: both;">
-    <p style = "text-align: left;"> William Kwan<br>Feburary 10, 2024  </p>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+
+    <hr style="clear: both" />
+    <p style="text-align: left">William Kwan<br />February 10, 2024</p>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

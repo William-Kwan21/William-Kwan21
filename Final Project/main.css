@@ -1,0 +1,185 @@
+body {
+  background-color: rgb(183, 219, 241);
+  color: rgb(25, 25, 26);
+  font-family: "Inter", sans-serif;
+}
+.jumbotron {
+  background-image: url(BaseballJumbotronPicture.jpg);
+  height: 200px;
+  background-size: cover;
+  background-position: 70% 75%;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: rgb(116, 173, 248);
+  border-radius: 10px;
+  padding: 50px;
+  font-family: "Titan One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2em;
+}
+
+.jumbotron h1 {
+  text-shadow: 2px 2px 0 #1c194e, 3px 3px 0 #000, 4px 4px 0 #000;
+}
+.jumbotron h2 {
+  text-shadow: 2px 2px 0 #1c194e, 3px 3px 0 #000, 4px 4px 0 #000;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #3e87e6;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.navbar ul {
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Ensures items are in a single line */
+}
+
+.navbar li {
+  margin-right: 10px; /* Adjust as needed for spacing */
+}
+
+.navbar a {
+  color: black; /* Default link color */
+  text-decoration: none; /* Removes underline */
+  padding: 10px; /* Adjust padding for visual alignment */
+}
+
+.navbar a:hover {
+  color: grey; /* Hover color */
+}
+
+p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+table {
+  width: 75%;
+  border-collapse: collapse;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #1c194e;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #bb2b2b;
+  text-align: center;
+  color: black;
+}
+
+table thead {
+  border-top-left-radius: 10px; /* Rounded top-left corner */
+  border-top-right-radius: 10px; /* Rounded top-right corner */
+}
+
+table tbody {
+  border-bottom-left-radius: 10px; /* Rounded bottom-left corner */
+  border-bottom-right-radius: 10px; /* Rounded bottom-right corner */
+}
+tr:nth-child(even) {
+  background-color: steelblue;
+  color: white;
+}
+tr:nth-child(odd) {
+  background-color: #1c194e;
+  color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+button {
+  border-radius: 5px;
+  background-color: rgb(102, 147, 245);
+}
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.big-button:active {
+  background-color: rgb(18, 89, 196);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.big-button {
+  padding: 10px 20px; /* Increase padding for a larger button */
+  font-size: 1.1em; /* Increase font size */
+  width: 180px; /* Set a fixed width for consistent sizing */
+  background-color: rgb(18, 89, 196); /* Change button color */
+  border: none; /* Optional: remove border for a cleaner look */
+  border-radius: 10px; /* Optional: add rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  color: black;
+  display: inline-block;
+  margin-right: 3%;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.search-input {
+  padding: 10px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid #07033d;
+  background-color: rgb(6, 206, 206);
+  color: black;
+  justify-content: left;
+  margin-left: 14%;
+  height: 75%;
+  margin-bottom: 10px;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 90%;
+}
+.content {
+  width: 100%;
+  justify-content: center;
+}
+#fixtureTable {
+  width: 75%;
+  border-collapse: collapse;
+}
+
+#fixtureTable th,
+#fixtureTable td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: left;
+}
+
+.fixture-row:hover {
+  background-color: #f5f5f5;
+}
+
+.detail-row td {
+  padding: 10px 20px;
+  background-color: #eee;
+}

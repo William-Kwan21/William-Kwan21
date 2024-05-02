@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Baseball Data API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4"><b>Baseball Data</b></h1>
+      <h2><b>Fixtures</b></h2>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li>
+            <a class="nav-link active btn btn-light me-2" href="../index.html"
+              ><b>Homepage</b></a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link active btn btn-light me-2"
+              href="tournamentTeams.html"
+              ><b>Teams</b></a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link active btn btn-light me-2"
+              href="tournamentFixtures.html"
+              ><b>Fixtures</b></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1>Fixtures in the Korea Baseball Organization</h1>
+    <div class="content">
+      <div class="controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a team..."
+          class="search-input"
+        />
+      </div>
+      <datalist id="teamNames"></datalist>
+      <table id="fixtureTable">
+        <thead>
+          <tr>
+            <th>Home Team</th>
+            <th>Result</th>
+            <th>Away Team</th>
+            <th>Date</th>
+            <th>Round</th>
+            <th>Season</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </body>
+  <script>
+    const url = "https://baseball-data.p.rapidapi.com/tournament/fixture";
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "e894a4cc21msh51d72d87c089e4fp13af33jsn61963d84de96",
+        "X-RapidAPI-Host": "baseball-data.p.rapidapi.com",
+      },
+    };
+
+    const fetchFixtures = async () => {
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json(); // Convert the response to JSON
+
+        if (response.ok) {
+          const fixture = result; // The complete list of teams from JSON
+
+          const tableBody = document.querySelector("#fixtureTable tbody");
+          tableBody.innerHTML = ""; // Clear any existing content
+
+          // Create rows for each fixture
+          result.forEach((fixture) => {
+            const row = document.createElement("tr");
+
+            // Create cells for each property in the fixture
+            const homeTeamCell = document.createElement("td");
+            homeTeamCell.textContent = fixture.homeTeam.name;
+            row.appendChild(homeTeamCell);
+
+            const resultCell = document.createElement("td");
+            resultCell.textContent =
+              fixture.homeTeam.score.regular +
+              " - " +
+              fixture.awayTeam.score.regular;
+            row.appendChild(resultCell);
+
+            const awayTeamCell = document.createElement("td");
+            awayTeamCell.textContent = fixture.awayTeam.name;
+            row.appendChild(awayTeamCell);
+
+            const dateCell = document.createElement("td");
+            dateCell.textContent = fixture.date;
+            row.appendChild(dateCell);
+
+            const roundCell = document.createElement("td");
+            roundCell.textContent = fixture.round.name;
+            row.appendChild(roundCell);
+
+            const seasonCell = document.createElement("td");
+            seasonCell.textContent = fixture.stage.name;
+            row.appendChild(seasonCell);
+
+            // Append the row to the table body
+            tableBody.appendChild(row);
+          });
+        } else {
+          console.error("Error fetching fixtures:", result);
+        }
+
+        //search Function
+        const searchInput = document.querySelector("#searchInput");
+
+        searchInput.addEventListener("input", (event) => {
+          const searchValue = searchInput.value.toLowerCase();
+
+          document.querySelectorAll("#fixtureTable tbody tr").forEach((row) => {
+            const homeTeamCell = row.querySelector("td:nth-child(1)");
+            const awayTeamCell = row.querySelector("td:nth-child(3)");
+
+            if (
+              homeTeamCell.textContent.toLowerCase().includes(searchValue) ||
+              awayTeamCell.textContent.toLowerCase().includes(searchValue)
+            ) {
+              row.style.display = ""; // Show the row
+            } else {
+              row.style.display = "none"; // Hide the row
+            }
+          });
+        });
+      } catch (error) {
+        console.error("Error fetching fixtures:", error);
+      }
+    };
+
+    fetchFixtures();
+  </script>
+</html>
